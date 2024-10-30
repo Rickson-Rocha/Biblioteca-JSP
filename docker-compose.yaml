@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-container
+    environment:
+      PMA_HOST: biblioteca.c36nogcf3xn0.sa-east-1.rds.amazonaws.com
+      PMA_USER: admin
+      PMA_PASSWORD: ifrn$2024
+      MYSQL_ROOT_PASSWORD: ifrn$2024
+    ports:
+      - "9080:80"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
