@@ -3,12 +3,12 @@ version: '3.8'
 services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-container
+    container_name: phpmyadmin-container-new
     environment:
-      PMA_HOST: biblioteca.c36nogcf3xn0.sa-east-1.rds.amazonaws.com
+      PMA_HOST: library.clkiqc8m2zfr.us-east-2.rds.amazonaws.com
       PMA_USER: admin
-      PMA_PASSWORD: ifrn$2024
-      MYSQL_ROOT_PASSWORD: ifrn$2024
+      PMA_PASSWORD:
+      MYSQL_ROOT_PASSWORD: Banco4444
     ports:
       - "9080:80"
     networks:

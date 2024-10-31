@@ -1,40 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <meta charset="UTF-8">
+    <title>Login - Biblioteca</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
-<h1>Teste
-
-    <%
-
-        String nome = "Diego";
-        for(int i=1; i<=10; i++){
-            out.print("<br>" + nome);
-        }
-
-        int idade = 19;
-
-        if(idade >= 18){
-            out.print("Essa pessa é de maior");
-        }else{
-            out.print("Essa pessa é de menor");
-        }
-
-
-    %>
-    <br>
-    <br>
-    <br>
-    <form action="menu.jsp" method="POST" border="1">
-
-        LOGIN <input type="text" name="login"><br>
-        SENHA <input type="text" name="senha">
-        <input type="submit" value="ENVIAR">
-
-    </form>
-
-</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h2 class="text-center">Login</h2>
+            <form action="menu.jsp" method="POST">
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input type="text" name="login" id="login" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

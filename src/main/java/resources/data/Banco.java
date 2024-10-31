@@ -9,9 +9,9 @@ public class Banco {
     private Connection conn;
     private static Banco b = new Banco();
 
-    private String url = "jdbc:mysql://biblioteca.c36nogcf3xn0.sa-east-1.rds.amazonaws.com/biblioteca";
+    private String url = "jdbc:mysql://library.clkiqc8m2zfr.us-east-2.rds.amazonaws.com/biblioteca";
     private String usr = "admin";
-    private String pass = "ifrn$2024";
+    private String pass = "Banco4444";
 
 
     public Banco() {
