@@ -6,12 +6,13 @@
   Time: 09:01
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="resources.data.Banco" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page import="data.DataBase" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Menu Principal - Biblioteca</title>
+    <title>Sistema de biblioteca</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -44,20 +45,25 @@
 <body>
 <%
     String login = request.getParameter("login");
-    String senha = request.getParameter("senha");
+    String password = request.getParameter("senha");
 
-    if (login != null && senha != null) {
-        Banco b = new Banco();
-        String nomeCompleto = b.getUsuario(login);
+
+    if (login != null && password != null) {
+        DataBase db = new DataBase();
+        String credentials = db.getPassword(login);
+
+        if (password.equals(credentials)) {
+            String fullName = db.getUser(login);
 %>
 <div class="container">
     <h1>MENU PRINCIPAL</h1>
-    <h2>Bem-vindo, <%= nomeCompleto %>!</h2>
+    <h2>Bem-vindo, <%= fullName %>!</h2>
     <ul class="menu-list">
-        <li><a href="adicionarLivro.jsp">Adicionar Livro</a></li>
-        <li><a href="consultarLivro.jsp">Consultar Livro</a></li>
-        <li><a href="excluirLivro.jsp">Excluir Livro</a></li>
-        <li><a href="logout.jsp">Sair</a></li>
+        <li><a href="create.jsp">Adicionar Livro</a></li>
+        <li><a href="read.jsp">Consultar Livro</a></li>
+        <li><a href="delete.jsp">Excluir Livro</a></li>
+        <li><a href="up.jsp">Excluir Livro</a></li>
+        <li><a href="index.jsp.jsp">Sair</a></li>
     </ul>
 </div>
 <%
@@ -69,6 +75,15 @@
 </div>
 <%
     }
+} else {
+%>
+<div class="container">
+    <h2>Por favor, forneça login e senha.</h2>
+    <a href='index.jsp'>Clique aqui para voltar</a>
+</div>
+<%
+    }
 %>
 </body>
 </html>
+
