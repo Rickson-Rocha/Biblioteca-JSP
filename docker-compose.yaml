@@ -7,7 +7,7 @@ services:
     environment:
       PMA_HOST: library.clkiqc8m2zfr.us-east-2.rds.amazonaws.com
       PMA_USER: admin
-      PMA_PASSWORD:
+      PMA_PASSWORD: Banco4444
       MYSQL_ROOT_PASSWORD: Banco4444
     ports:
       - "9080:80"
